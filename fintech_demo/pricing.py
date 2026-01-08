@@ -1,19 +1,19 @@
-from __future__ import annotations
-
 import requests
 
+COINGECKO_URL = "https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd"
 
 def get_xrp_price_coingecko(timeout_s: float = 10.0) -> float | None:
-    """Fetch live XRP/USD price from CoinGecko.
-
-    Returns None if the request fails for any reason.
-    """
+    """Fetch XRP/USD price from CoinGecko. Returns float or None."""
     try:
-        url = "https://api.coingecko.com/api/v3/simple/price"
-        params = {"ids": "ripple", "vs_currencies": "usd"}
-        r = requests.get(url, params=params, timeout=timeout_s)
-        r.raise_for_status()
-        data = r.json()
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+            )
+        }
+        resp = requests.get(COINGECKO_URL, headers=headers, timeout=timeout_s)
+        resp.raise_for_status()
+        data = resp.json()
         return float(data["ripple"]["usd"])
     except Exception:
         return None
