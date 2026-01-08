@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from decimal import Decimal
 from xrpl.clients import JsonRpcClient
 from xrpl.wallet import Wallet
 
@@ -10,7 +11,8 @@ class AppState:
     issuer: Wallet | None = None
     seller: Wallet | None = None
     buyer: Wallet | None = None
-
+    latest_price_per_token_xrp: Decimal | None = None
+    last_trade_total_xrp_intended: Decimal | None = None
     token_code: str = "PYT"
     token_supply: str = "125"
 
