@@ -1,0 +1,27 @@
+# ======================
+# Python artifacts
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ======================
+# Gradio artifacts
+# ======================
+.gradio/
+gradio_cached_examples/
+
+# ======================
+# Virtual environments
+# ======================
+.venv/
+venv/
+env/
+xrp/
+
+# ======================
+# OS / editor noise
+# ======================
+.DS_Store
+.idea/
+.vscode/
