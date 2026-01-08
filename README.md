@@ -29,10 +29,14 @@ Traditional student loans create debt burdens. This system creates an alternativ
 - **Decentralized Trading**: Open market for scholarship tokens
 - **Dynamic Supply**: Token issuance adjusts based on market capitalization
 
-## Prerequisites
-
+## Installation
+Install dependencies: 
 ```bash
-pip install xrpl-py nest-asyncio requests
+pip install -r requirements.txt
+```
+Run the `main.py` file to produce the local Gradio demo:
+```bash
+python main.py
 ```
 
 ## System Architecture
